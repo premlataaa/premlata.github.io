@@ -46,9 +46,22 @@ window.addEventListener("scroll", () => {
 
 //? <!----------------------------------------------- < Resume> ----------------------------------------------->
 
+// function resume() {
+//   window.open("https://drive.google.com/file/d/1lJQefDDZ_hiPDPrVke_aQHva-pXdtfmI/view?usp=sharing", "_blank")
+// }
+// brandbg.addEventListener("click", (e) => {
+//   console.log(e);
+// });
+
 function resume() {
-  window.open("Premlata-Resume.pdf", "_blank")
+  const fileURL = "https://drive.google.com/uc?export=download&id=1lJQefDDZ_hiPDPrVke_aQHva-pXdtfmI"; // Direct download link
+
+  const link = document.createElement("a");
+  link.href = fileURL;
+  link.download = "Premlata-Resume.pdf"; // File name when downloaded
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
-brandbg.addEventListener("click", (e) => {
-  console.log(e);
-});
+
+document.getElementById("resume").addEventListener("click", resume);
